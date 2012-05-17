@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Proportion Slider</title>
+	<link rel="stylesheet" type="text/css" href="default.css">
+	<script type="text/javascript" src="src/LC.ProportionSlider.js"></script>
+</head>
+<body>
+
+	<div id="proportionSlider" class="proportionSlider"></div>
+
+	<script type="text/javascript">
+
+		(function()
+		{
+
+			var slider = new LC.ProportionSlider({ element: document.getElementById('proportionSlider'), maxValue: 2000 });
+			slider.addItem({ value: 300, content: "AIK" });
+			slider.addItem({ value: 500, content: "Halmstad" });
+			slider.addItem({ value: 1000, content: "Frösunda" });
+
+		})();
+
+	</script>
+
+</body>
+</html>

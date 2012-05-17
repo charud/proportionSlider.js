@@ -1,0 +1,19 @@
+.proportionSlider
+{
+	width: 500px;
+	height: 35px;
+	background-color: #eee;
+	border: 1px solid #bbb;
+}
+
+.proportionSlider .item
+{
+	float: left;
+	background-color: #eeeeff;
+	border-right: 1px solid #999;
+	text-align: center;
+	padding: 9px 0px;
+
+	font-family: helvetica, arial, sans-serif;
+	font-size: 14px;
+}
