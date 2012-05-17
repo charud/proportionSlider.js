@@ -21,23 +21,25 @@ LC.ProportionSlider = function(options)
 
 	me.invalidateLayout = function()
 	{
-		_element.innerHTML = "";
-
 		for(var i in _items)
 		{
 			var item = _items[i];
-			var elmItem = document.createElement("div");
-			elmItem.className = "item";
-			elmItem.innerHTML = item.content;
 
+			// Does an element for this item not already exist, then create
+			// and append a new element for this item
+			if(!item.element)
+			{
+				var elmItem = document.createElement("div");
+				elmItem.className = "item";
+				elmItem.innerHTML = item.content;
+				_element.appendChild(elmItem);
+				item.element = elmItem;
+			}
+
+			// Update element percentage
 			var itemPercentage = item.value / _maxValue;
-
-			elmItem.style.width = itemPercentage * _element.offsetWidth - 1 /*border*/;
-			//elmItem.style.height = _element.offsetHeight - 2 /*border*/;
-
-			_element.appendChild(elmItem);
+			item.element.style.width = itemPercentage * _element.offsetWidth - 1 /*border*/
 		}
-
 
 	};
 
